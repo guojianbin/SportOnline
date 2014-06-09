@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>体育在线-<%= title %></title>
+     <link rel="stylesheet" href="stylesheets/jquery.mobile-1.4.2.css" />
+	  <script src="javascripts/jquery-1.8.0.min.js"></script>
+	   <script src="javascripts/jquery.mobile-1.4.2.min.js"></script>
+</head>
+<body>
+    <div data-role="page">
+
+  <div data-role="header">
+        <a href="/" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-btn-left">主页</a>
+    <h1><%= channel %></h1>
+
+  </div>
+  
+ <form action="/insertclub" method="post" enctype="multipart/form-data">
+  <input name="txtsport" value="<%= sport %>" style="display:none">
+    <input name="txtleague" value="<%= league %>" style="display:none">
+        <div class="ui-field-contain">
+         <label for="txtname">球队:</label>
+         <input type="text" name="txtname" id="txtname" value="">
+    </div>
+    <div class="ui-field-contain">
+         <label for="txtwinning">积分:</label>
+         <input type="text" data-clear-btn="true" name="txtwinning" id="txtwinning" value="">
+    </div>
+	 <div class="ui-field-contain">
+        <label >图片:</label>
+		<input type="file" name="thumbnail" id="thumbnail">
+    </div>
+	
+	
+	<div data-role="footer"  data-theme="b">
+   <div data-role="navbar">
+		<ul>
+			<li><a href="/ranking/<%= sport %>/<%= league %>" data-iconpos="top" >取消</a></li>
+			<li> <button type="submit">保存</button></li>
+			
+		</ul>
+	</div>
+  </div>
+  
+  </form>
+  
+</div>
+
+
+ 
+<%- include footeredit %>

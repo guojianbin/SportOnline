@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>体育在线-<%= title %></title>
+     <link rel="stylesheet" href="stylesheets/jquery.mobile-1.4.2.css" />
+	  <script src="javascripts/jquery-1.8.0.min.js"></script>
+	   <script src="javascripts/jquery.mobile-1.4.2.min.js"></script>
+</head>
+<body>
+    <div data-role="page">
+
+  <div data-role="header">
+        <a href="/" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-btn-left">主页</a>
+    <h1><%= channel %></h1>
+      <a href="#popupLogin"  data-transition="pop" data-rel="popup" data-position-to="window" class="ui-btn ui-icon-user ui-btn-icon-notext ui-corner-all ui-btn-right">登录</a>
+      <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+    <form>
+        <div style="padding:10px 20px;">
+            <h3>Please sign in</h3>
+            <label for="un" class="ui-hidden-accessible">Username:</label>
+            <input type="text" name="user" id="un" value="" placeholder="username" data-theme="a">
+            <label for="pw" class="ui-hidden-accessible">Password:</label>
+            <input type="password" name="pass" id="pw" value="" placeholder="password" data-theme="a">
+             <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">注册</a>
+        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">登录</a>
+        </div>
+    </form>
+</div>
+
+  </div>

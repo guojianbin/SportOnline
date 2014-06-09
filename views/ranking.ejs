@@ -1,0 +1,28 @@
+<%- include header %>
+
+   <table data-role="table" id="table-column-toggle"  class="ui-responsive table-stroke">
+     <thead>
+       <tr>
+         <th data-priority="2">排名</th>
+         <th>球队</th>
+         <th data-priority="5">积分</th>
+		 <th><a href="/insert/<%= sport %>/<%= league %>" data-rel="external">新增</a></th>
+       </tr>
+     </thead>
+     <tbody>
+	 <% for(var i=0, order = 1; i<rankdata.length; i++) {%>
+  <tr>
+         <th><%= order++ %></th>
+         <td><a href="http://en.wikipedia.org/wiki/Citizen_Kane" data-rel="external"><%= rankdata[i].name %></a></td>
+       
+         <td><%= rankdata[i].winning %></td>
+		 <td><a href="/edit/<%= sport %>/<%= league %>/<%= rankdata[i].clubid %>" data-rel="external">编辑</a>
+		 <a href="/delete/<%= sport %>/<%= league %>/<%= rankdata[i].clubid %>" data-rel="external">删除</a>
+		 </td>
+		
+       </tr>
+<% } %>
+      
+     </tbody>
+   </table>
+<%- include footermenu %>
